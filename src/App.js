@@ -1,12 +1,12 @@
 import './App.css';
 import { Container } from '@mui/system';
-import InputArea from './components/InputArea';
+import MainPage from './components/MainPage';
 
 function App() {
   return (
     <div className="App">
       <Container>
-        <InputArea />
+        <MainPage />
       </Container>
     </div>
   );
