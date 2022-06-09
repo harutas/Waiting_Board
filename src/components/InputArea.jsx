@@ -11,7 +11,6 @@ const InputArea = (props) => {
     <Stack direction={"row"} justifyContent="center">
       <FormControl sx={{ m: 1}} variant="outlined">
         <OutlinedInput
-          inputProps={{}}
           autoComplete="off"
           name={"name"}
           value={props.value.name}
@@ -36,12 +35,15 @@ const InputArea = (props) => {
         <Select
             name={"preferredSeat"}
             value={props.value.preferredSeat}
+            displayEmpty
             onChange={props.onChange}
-            endAdornment={<InputAdornment position="end">座席</InputAdornment>}
         >
-          <MenuItem value="テーブル" >テーブル</MenuItem>
-          <MenuItem value="カウンター" >カウンター</MenuItem>
-          <MenuItem value="どちらでも可" >どちらでも可</MenuItem>
+          <MenuItem value="">
+            <em>座席</em>
+          </MenuItem>
+          <MenuItem value="テーブル">テーブル</MenuItem>
+          <MenuItem value="カウンター">カウンター</MenuItem>
+          <MenuItem value="どちらでも可">どちらでも可</MenuItem>
         </Select>
       </FormControl>
       <Button
