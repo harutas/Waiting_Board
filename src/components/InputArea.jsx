@@ -8,8 +8,8 @@ import Button from '@mui/material/Button';
  
 const InputArea = (props) => {
   return (
-    <Stack direction={"row"} justifyContent="center">
-      <FormControl sx={{ m: 1}} variant="outlined">
+    <Stack direction={"row"} justifyContent="center" sx={{ my: 1 }}>
+      <FormControl sx={{ m: 1 }} variant="outlined">
         <OutlinedInput
           autoComplete="off"
           name={"name"}
