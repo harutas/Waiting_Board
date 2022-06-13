@@ -1,5 +1,7 @@
+import { Divider } from "@mui/material";
 import React from "react"
 import InputArea from "./InputArea"
+import WaitingTablePage from "./WaitingTablePage"
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -34,10 +36,19 @@ class MainPage extends React.Component {
     )
   }
 
+  renderWaitingTablePage() {
+    return (
+      <WaitingTablePage/>
+    )
+  }
+
   render () {
     return(
       <>
         {this.renderInputArea()}
+        <Divider/>
+        {this.renderWaitingTablePage()}
+        <Divider/>
       </>
     )
   }
