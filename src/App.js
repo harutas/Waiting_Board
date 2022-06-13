@@ -7,8 +7,8 @@ import MainPage from './components/MainPage';
 function App() {
   return (
     <div className="App">
+      <Header />
       <Container sx={{justifycontent: "center"}}>
-        <Header />
         <MainPage />
       </Container>
     </div>
