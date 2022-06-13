@@ -1,3 +1,4 @@
+import { Guest } from "../model/index"
 import { Divider } from "@mui/material";
 import React from "react"
 import InputArea from "./InputArea"
@@ -7,6 +8,7 @@ class MainPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id : 1,
       inputData : {
         name : "",
         numberOfPeople : "",
@@ -16,6 +18,8 @@ class MainPage extends React.Component {
       insideOfShopArray : []
     }
     this.handleChange = this.handleChange.bind(this);
+    this.addToWaitingArray = this.addToWaitingArray.bind(this);
+
   }
 
   handleChange(e) {
@@ -27,18 +31,39 @@ class MainPage extends React.Component {
     })
   }
 
+  addToWaitingArray() {
+    const array = this.state.waitingArray;
+    array.push(
+      new Guest(
+        this.state.id,
+        this.state.inputData.name,
+        this.state.inputData.numberOfPeople,
+        this.state.inputData.preferredSeat
+      )
+    );
+    console.log(array)
+    this.setState({
+      waitingArray : array,
+      id : this.state.id + 1
+    });
+  }
+
   renderInputArea() {
     return (
       <InputArea
         value={this.state.inputData}
         onChange={(e) => this.handleChange(e)}
+        onClick={() => this.addToWaitingArray()}
       />
     )
   }
 
   renderWaitingTablePage() {
     return (
-      <WaitingTablePage/>
+      <WaitingTablePage
+        value={this.state.waitingArray}
+        // cancelOnClick={() => this.cancelOnClick()}
+      />
     )
   }
 
@@ -48,7 +73,7 @@ class MainPage extends React.Component {
         {this.renderInputArea()}
         <Divider/>
         {this.renderWaitingTablePage()}
-        <Divider/>
+        {/* <Divider/> */}
       </>
     )
   }
