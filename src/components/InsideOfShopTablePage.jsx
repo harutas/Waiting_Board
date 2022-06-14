@@ -11,18 +11,18 @@ const InsideOfShopTablePage = (props) => {
       <TableCell sx={{width : 150}} align="center">{item.name}</TableCell>
       <TableCell sx={{width : 150}} align="center">{item.numberOfPeople}</TableCell>
       <TableCell sx={{width : 150}} align="center">{item.preferredSeat}</TableCell>
-      <TableCell align="center">
+      <TableCell sx={{width : 150}} align="center">
         <Button
+          id={item.id}
           sx={{ width: 150 }}
           // disabled={props.disabled}
           variant="outlined"
           color='secondary'
-          // onClick={props.onClick}
+          onClick={props.goOutOnClick}
           >
           お会計（退店）
         </Button>
       </TableCell>
-
     </TableRow>
 
   );
@@ -31,15 +31,15 @@ const InsideOfShopTablePage = (props) => {
   return (
     <Box sx={{my: 2}}>
       <Typography variant="h5" component={"div"}>店内状況</Typography>
-
         <TableContainer component={Paper} sx={{ width: 850, margin: "auto", boxShadow: 3, my: 2}}>
           <Table sx={{ minWidth: 300 }} aria-label="waiting-table">
             <TableHead>
               <TableRow>
-                <TableCell sx={{width : 150}} align="center">名前</TableCell>
+                <TableCell sx={{width : 150}} align="center">お名前</TableCell>
                 <TableCell sx={{width : 150}} align="center">人数</TableCell>
-                <TableCell sx={{width : 150}} align="center">座席</TableCell>
-                <TableCell sx={{width : 250}} align="center"></TableCell>
+                <TableCell sx={{width : 150}} align="center">希望席</TableCell>
+                <TableCell sx={{width : 150}} align="center"></TableCell>
+                <TableCell sx={{width : 100}} align="center"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
