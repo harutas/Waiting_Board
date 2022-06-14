@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { createTheme } from '@mui/material/styles';
-import { indigo } from '@mui/material/colors';
+import { purple } from '@mui/material/colors';
 
 const Header = () => {
     return (
@@ -35,10 +35,10 @@ const Header = () => {
 const theme = createTheme({
   palette: {
     primary: {
-      main: indigo[500],
+      main: purple[500],
     },
     secondary: {
-      main: '#2979ff',
+      main: '#9c27b0',
     },
   },
 });
