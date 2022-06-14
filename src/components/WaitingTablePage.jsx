@@ -8,12 +8,12 @@ const WaitingTablePage = (props) => {
       key={item.id}
       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
     >
-      <TableCell sx={{width : 200}} align="center">{item.name}</TableCell>
-      <TableCell sx={{width : 200}} align="center">{item.numberOfPeople}</TableCell>
-      <TableCell sx={{width : 200}} align="center">{item.preferredSeat}</TableCell>
+      <TableCell sx={{width : 150}} align="center">{item.name}</TableCell>
+      <TableCell sx={{width : 150}} align="center">{item.numberOfPeople}</TableCell>
+      <TableCell sx={{width : 150}} align="center">{item.preferredSeat}</TableCell>
       <TableCell align="center">
         <Button
-          sx={{ mx: 1, width: 150 }}
+          sx={{ width: 150 }}
           // disabled={props.disabled}
           variant="outlined"
           color='secondary'
@@ -25,7 +25,7 @@ const WaitingTablePage = (props) => {
       </TableCell>
       <TableCell align="center">
         <Button
-          sx={{ mx: 1, width: 100 }}
+          sx={{ width: 100 }}
           // disabled={props.disabled}
           variant="outlined"
           color='secondary'
@@ -52,7 +52,7 @@ const WaitingTablePage = (props) => {
                 <TableCell sx={{width : 150}} align="center">人数</TableCell>
                 <TableCell sx={{width : 150}} align="center">座席</TableCell>
                 <TableCell sx={{width : 150}} align="center"></TableCell>
-                <TableCell sx={{width : 150}} align="center"></TableCell>
+                <TableCell sx={{width : 100}} align="center"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
