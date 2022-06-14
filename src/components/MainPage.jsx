@@ -3,6 +3,7 @@ import { Divider } from "@mui/material";
 import React from "react"
 import InputArea from "./InputArea"
 import WaitingTablePage from "./WaitingTablePage"
+import InsideOfShopTablePage from "./InsideOfShopTablePage";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -67,13 +68,22 @@ class MainPage extends React.Component {
     )
   }
 
+  renderInsideOfShopTablePage() {
+    return (
+      <InsideOfShopTablePage
+        value={this.state.insideOfShopArray}
+      />
+    )
+  }
+
   render () {
     return(
       <>
         {this.renderInputArea()}
         <Divider/>
         {this.renderWaitingTablePage()}
-        {/* <Divider/> */}
+        <Divider/>
+        {this.renderInsideOfShopTablePage()}
       </>
     )
   }
