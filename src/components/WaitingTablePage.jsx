@@ -13,11 +13,12 @@ const WaitingTablePage = (props) => {
       <TableCell sx={{width : 150}} align="center">{item.preferredSeat}</TableCell>
       <TableCell align="center">
         <Button
+          id={item.id}
           sx={{ width: 150 }}
           // disabled={props.disabled}
           variant="outlined"
           color='secondary'
-          // onClick={props.onClick}
+          onClick={props.cancelOnClick}
           >
           取り消し
         </Button>
@@ -25,11 +26,12 @@ const WaitingTablePage = (props) => {
       </TableCell>
       <TableCell align="center">
         <Button
+          id={item.id}
           sx={{ width: 100 }}
           // disabled={props.disabled}
           variant="outlined"
           color='secondary'
-          // onClick={props.onClick}
+          onClick={props.guideOnClick}
           >
           案内
         </Button>
@@ -48,9 +50,9 @@ const WaitingTablePage = (props) => {
           <Table sx={{ minWidth: 300 }} aria-label="waiting-table">
             <TableHead>
               <TableRow>
-                <TableCell sx={{width : 150}} align="center">名前</TableCell>
+                <TableCell sx={{width : 150}} align="center">お名前</TableCell>
                 <TableCell sx={{width : 150}} align="center">人数</TableCell>
-                <TableCell sx={{width : 150}} align="center">座席</TableCell>
+                <TableCell sx={{width : 150}} align="center">希望席</TableCell>
                 <TableCell sx={{width : 150}} align="center"></TableCell>
                 <TableCell sx={{width : 100}} align="center"></TableCell>
               </TableRow>

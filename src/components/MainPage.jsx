@@ -18,9 +18,6 @@ class MainPage extends React.Component {
       waitingArray : [],
       insideOfShopArray : []
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.addToWaitingArray = this.addToWaitingArray.bind(this);
-
   }
 
   handleChange(e) {
@@ -33,6 +30,9 @@ class MainPage extends React.Component {
   }
 
   addToWaitingArray() {
+    if (this.state.inputData.name === "") return alert("お名前を入力してください。");
+    else if (this.state.inputData.numberOfPeople === "") return alert("人数を入力してください。");
+    else if (this.state.inputData.preferredSeat === "") return alert("希望の座席を選択してください。");
     const array = this.state.waitingArray;
     array.push(
       new Guest(
@@ -42,10 +42,55 @@ class MainPage extends React.Component {
         this.state.inputData.preferredSeat
       )
     );
-    console.log(array)
     this.setState({
       waitingArray : array,
-      id : this.state.id + 1
+      id : this.state.id + 1,
+      inputData : {
+        name : "",
+        numberOfPeople : "",
+        preferredSeat : ""
+      }
+    });
+  }
+
+  cancelOnClick(e) {
+    const array = this.state.waitingArray;
+    for (let i = 0; i < array.length; i++){
+      if (array[i].id === parseInt(e.target.id)){
+        array.splice(i, 1);
+        break;
+      }
+    }
+    this.setState({waitingArray : array});
+  }
+
+  guideOnClick(e) {
+    const waitingArr = this.state.waitingArray;
+    const insideOfShopArr = this.state.insideOfShopArray;
+
+    for (let i = 0; i < waitingArr.length; i++){
+      if (waitingArr[i].id === parseInt(e.target.id)){
+        insideOfShopArr.push(waitingArr[i]);
+        waitingArr.splice(i, 1);
+        break;
+      }
+    }
+    this.setState({
+      waitingArray : waitingArr,
+      insideOfShopArray : insideOfShopArr
+    });
+  }
+
+  goOutOnClick(e) {
+    const insideOfShopArr = this.state.insideOfShopArray;
+    for (let i = 0; i < insideOfShopArr.length; i++){
+      if (insideOfShopArr[i].id === parseInt(e.target.id)){
+        insideOfShopArr.splice(i, 1);
+        break;
+      }
+    }
+    this.setState({
+      insideOfShopArray : insideOfShopArr
     });
   }
 
@@ -63,7 +108,8 @@ class MainPage extends React.Component {
     return (
       <WaitingTablePage
         value={this.state.waitingArray}
-        // cancelOnClick={() => this.cancelOnClick()}
+        cancelOnClick={(e) => this.cancelOnClick(e)}
+        guideOnClick={(e) => this.guideOnClick(e)} 
       />
     )
   }
@@ -72,6 +118,7 @@ class MainPage extends React.Component {
     return (
       <InsideOfShopTablePage
         value={this.state.insideOfShopArray}
+        goOutOnClick={(e) => this.goOutOnClick(e)}
       />
     )
   }

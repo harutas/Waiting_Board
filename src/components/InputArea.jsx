@@ -31,7 +31,7 @@ const InputArea = (props) => {
           size="small"
         />
       </FormControl>
-      <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
+      <FormControl sx={{ m: 1, minWidth: 250 }} size="small">
         <Select
             name={"preferredSeat"}
             value={props.value.preferredSeat}
@@ -39,7 +39,7 @@ const InputArea = (props) => {
             onChange={props.onChange}
         >
           <MenuItem value="">
-            <em>座席</em>
+            <em>希望の席をお選びください</em>
           </MenuItem>
           <MenuItem value="テーブル">テーブル</MenuItem>
           <MenuItem value="カウンター">カウンター</MenuItem>
