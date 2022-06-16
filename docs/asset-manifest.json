@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Waiting_Board/static/css/main.964fdded.css",
+    "main.js": "/Waiting_Board/static/js/main.91de3812.js",
+    "static/js/787.377fef46.chunk.js": "/Waiting_Board/static/js/787.377fef46.chunk.js",
+    "index.html": "/Waiting_Board/index.html",
+    "main.964fdded.css.map": "/Waiting_Board/static/css/main.964fdded.css.map",
+    "main.91de3812.js.map": "/Waiting_Board/static/js/main.91de3812.js.map",
+    "787.377fef46.chunk.js.map": "/Waiting_Board/static/js/787.377fef46.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.964fdded.css",
+    "static/js/main.91de3812.js"
+  ]
+}
