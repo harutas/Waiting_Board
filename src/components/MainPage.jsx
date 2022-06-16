@@ -1,5 +1,5 @@
 import { Guest } from "../model/index"
-import { Divider } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import React from "react"
 import InputArea from "./InputArea"
 import WaitingTablePage from "./WaitingTablePage"
@@ -20,6 +20,7 @@ class MainPage extends React.Component {
     }
   }
 
+  // inputデータの更新
   handleChange(e) {
     const target = e.target;
     const name = target.name;
@@ -29,6 +30,7 @@ class MainPage extends React.Component {
     })
   }
 
+  // 順番待ち
   addToWaitingArray() {
     if (this.state.inputData.name === "") return alert("お名前を入力してください。");
     else if (this.state.inputData.numberOfPeople === "") return alert("人数を入力してください。");
@@ -53,6 +55,7 @@ class MainPage extends React.Component {
     });
   }
 
+  // キャンセル
   cancelOnClick(e) {
     const array = this.state.waitingArray;
     for (let i = 0; i < array.length; i++){
@@ -64,6 +67,7 @@ class MainPage extends React.Component {
     this.setState({waitingArray : array});
   }
 
+  // 案内
   guideOnClick(e) {
     const waitingArr = this.state.waitingArray;
     const insideOfShopArr = this.state.insideOfShopArray;
@@ -81,6 +85,7 @@ class MainPage extends React.Component {
     });
   }
 
+  // 退店
   goOutOnClick(e) {
     const insideOfShopArr = this.state.insideOfShopArray;
     for (let i = 0; i < insideOfShopArr.length; i++){
@@ -125,13 +130,13 @@ class MainPage extends React.Component {
 
   render () {
     return(
-      <>
+      <Box sx={{overflow: "auto"}}>
         {this.renderInputArea()}
         <Divider/>
         {this.renderWaitingTablePage()}
         <Divider/>
         {this.renderInsideOfShopTablePage()}
-      </>
+      </Box>
     )
   }
 }

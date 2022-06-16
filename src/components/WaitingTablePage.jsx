@@ -15,7 +15,6 @@ const WaitingTablePage = (props) => {
         <Button
           id={item.id}
           sx={{ width: 150 }}
-          // disabled={props.disabled}
           variant="outlined"
           color='secondary'
           onClick={props.cancelOnClick}
@@ -28,7 +27,6 @@ const WaitingTablePage = (props) => {
         <Button
           id={item.id}
           sx={{ width: 100 }}
-          // disabled={props.disabled}
           variant="outlined"
           color='secondary'
           onClick={props.guideOnClick}

@@ -15,7 +15,6 @@ const InsideOfShopTablePage = (props) => {
         <Button
           id={item.id}
           sx={{ width: 150 }}
-          // disabled={props.disabled}
           variant="outlined"
           color='secondary'
           onClick={props.goOutOnClick}
