@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Waiting_Board
+簡易的なウェイティングボードです。  
+顧客は、人数や席の希望を入力して予約できます。  
+また、予約の取り消しができます。  
+店員は、予約されている顧客を案内できます。  
+その際、ウェイティングボードから名前は削除します。  
+※　PC推奨
+
+## URL
+https://harutas.github.io/Waiting_Board/
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

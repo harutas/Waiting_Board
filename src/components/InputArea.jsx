@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 const InputArea = (props) => {
   return (
     <Stack direction={"row"} justifyContent="center" sx={{ my: 1 }}>
-      <FormControl sx={{ m: 1 }} variant="outlined">
+      <FormControl sx={{ m: 1, minWidth: 200 }} variant="outlined">
         <OutlinedInput
           autoComplete="off"
           name={"name"}
@@ -19,7 +19,7 @@ const InputArea = (props) => {
           size="small"
         />
       </FormControl>
-      <FormControl sx={{ m: 1}} variant="outlined">
+      <FormControl sx={{ m: 1, minWidth: 200}} variant="outlined">
         <OutlinedInput
           inputProps={{max: 5, min: 0}}
           type='number'
@@ -47,7 +47,7 @@ const InputArea = (props) => {
         </Select>
       </FormControl>
       <Button
-          sx={{ m: 1, width: '20ch' }}
+          sx={{ m: 1, width: '20ch', minWidth: "20ch" }}
           disabled={props.disabled}
           variant="contained"
           color='secondary'
